@@ -30,12 +30,6 @@ else
     echo "The directory doesn't exist."
 fi
 
-if [ -d ~/MovieAPI ]; then
-    echo "The directory exist."
-else
-    echo "The directory doesn't exist."
-fi
-
 # 15:20 - Using the which command on Linux to check if a command is present
 which htop
 
@@ -43,13 +37,13 @@ which htop
 # 21:52 - How to use the apt command inside a Bash Script on Linux
 # 23:02 - Using the -y option with apt to assume yes (bypass/skip prompts)
 
-program=htop
+program_name=htop
 
 if [ "$(command -v program)" ]; then
-    echo "${program} is available, let's run it..."
+    echo "${program_name} is available, let's run it..."
 else
-    echo "${program} is NOT available, installing it..."
-    sudo apt update && sudo apt install -y ${program}
+    echo "${program_name} is NOT available, installing it..."
+    sudo apt update && sudo apt install -y ${program_name}
 fi
 
-$program
+$program_name

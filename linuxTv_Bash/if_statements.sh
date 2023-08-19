@@ -3,7 +3,6 @@
 # 01:42 - An example of an If Statement within a Bash Script on Linux
 # 04:43 - Marking the script executable and running it
 mynum=200
-command=200
 
 if [ $mynum -eq 200 ]; then
     echo "clear"
@@ -23,8 +22,6 @@ if [ -f ~/myfile.sh ]; then
 else
     echo "The file doesn't exist."
 fi
-
-$command
 
 # 14:22 - Further explanation of checking for the existence of files and directories on Linux
 if [ -d ~/MovieAPI ]; then
@@ -46,13 +43,13 @@ which htop
 # 21:52 - How to use the apt command inside a Bash Script on Linux
 # 23:02 - Using the -y option with apt to assume yes (bypass/skip prompts)
 
-command=/usr/bin/htop
+program=htop
 
-if [ -f ${command} ]; then
-    echo "${command} is available, let's run it..."
+if [ "$(command -v program)" ]; then
+    echo "${program} is available, let's run it..."
 else
-    echo "$command is NOT available, installing it..."
-    sudo apt update && sudo apt install -y htop
+    echo "${program} is NOT available, installing it..."
+    sudo apt update && sudo apt install -y ${program}
 fi
 
-$command
+$program

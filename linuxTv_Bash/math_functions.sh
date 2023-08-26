@@ -21,5 +21,5 @@ echo "Multiplication =: ${mul}"
 
 # 03:48 - Using variables with math expressions
 length="100"
-breadth="7"
+breadth="78"
 echo "Area =: $((length * breadth))" # it is redundant to use $(${length})

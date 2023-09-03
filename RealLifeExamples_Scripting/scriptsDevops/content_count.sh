@@ -14,12 +14,12 @@ elif [ $# -eq 1 ]; then
     lines=$(ls -lh $1 | wc -l)
     echo "You have $((lines - 1)) objects in the $1 directory"
 elif [ $# -gt 1 ]; then
-    echo $@
+    echo "$@"
     echo $#
     for arg in "$@"; do
         echo "$arg"
         #    ls -lh "$arg"
-        ls -lh $arg &>/dev/null
+        ls -lh "$arg" &>/dev/null
 
         if [ $? -eq 0 ]; then
             lines=$(ls -lh $arg | wc -l)
